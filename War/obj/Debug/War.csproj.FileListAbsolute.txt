@@ -1,0 +1,7 @@
+F:\Users\Xavi\Documents\Resume\War\War\War\bin\Debug\War.exe.config
+F:\Users\Xavi\Documents\Resume\War\War\War\bin\Debug\War.exe
+F:\Users\Xavi\Documents\Resume\War\War\War\bin\Debug\War.pdb
+F:\Users\Xavi\Documents\Resume\War\War\War\obj\Debug\War.csprojAssemblyReference.cache
+F:\Users\Xavi\Documents\Resume\War\War\War\obj\Debug\War.csproj.CoreCompileInputs.cache
+F:\Users\Xavi\Documents\Resume\War\War\War\obj\Debug\War.exe
+F:\Users\Xavi\Documents\Resume\War\War\War\obj\Debug\War.pdb
