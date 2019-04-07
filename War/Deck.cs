@@ -9,7 +9,7 @@ namespace War
     class Deck
     {
         public Stack<Card> cards = new Stack<Card>();
-        private static Random random = new Random();
+        private static Random random = new Random(); //For shuffling
 
         //Fill out the deck with all suits and values;
         public Deck()
@@ -25,10 +25,10 @@ namespace War
             }
         }
 
-        //Convert stack to a list then Fisher-Yates shuffle. Passing by ref here mostly just because I wanted to play around with the practice.
+        //Convert stack to a list then Fisher-Yates shuffle. Passing by ref here mostly just because I wanted to play around with it.
         public static void Shuffle(ref Stack<Card> stack)
         {
-            List<Card> _cards = stack.ToList();
+            List<Card> _cards = stack.ToList(); //Conveting to a list just to make shuffling and debug logs easier
             int n = stack.Count;
             while (n > 1)
             {
@@ -39,8 +39,9 @@ namespace War
                 _cards[n] = value;
             }
 
-            stack = new Stack<Card>(_cards);
+            stack = new Stack<Card>(_cards); //Convert our shuffled list back to a stack.
 
+            //If we want to see what the deck looks like after being shuffled
             if(Program.logsEnabled)
             {
                 Console.WriteLine("SHUFFLED CARDS: ");

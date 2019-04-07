@@ -12,12 +12,13 @@ namespace War
         Player p2 = new Player("Player 2");
 
         Deck deck = new Deck();
-        List<Card> winnings = new List<Card>();
+        List<Card> winnings = new List<Card>(); //Cards the winner of the hand will take. Done this way to more easily accomodate the possibility of consecutive wars
 
-        //Can we still play the game;
+        //Can we still play the game or has it ended?
         bool canPlay = true;
         Player winner;
 
+        //Clear the variables, shuffle the deck, deal cards.
         public void StartGame()
         {
             winner = null;
@@ -39,17 +40,17 @@ namespace War
 
         public void PlayGame()
         {
-            while(canPlay)
+            while(canPlay) //Keep playing until we have a winner
             {
                 canPlay = PlayRound();
             }
             Console.WriteLine(winner.name + " Wins the game!");
         }
 
-        //Can we still play?
+        //Check for if either player can still go on
         public bool CanContinue()
         {
-            //Check if anyone has lost
+
             if (!p1.CanPlay())
             {
                 winner = p2;
@@ -73,7 +74,7 @@ namespace War
                 return false;
             }
 
-            //Play cards and compare
+            //Play cards, add them to winnings and compare
             Card a = p1.PlayCard(true);
             Card b = p2.PlayCard(true);
 
@@ -101,6 +102,7 @@ namespace War
         public bool CardWar()
         {
             Console.WriteLine("\nWAR!\n");
+
             //Do we still have cards we can play?
             if (!CanContinue())
             {
@@ -111,6 +113,7 @@ namespace War
             winnings.Add(p1.PlayCard(false));
             winnings.Add(p2.PlayCard(false));
 
+            //Check if we still have cards.If so, play another round with all the previous cards played as winnings until someone comes out on top.
             if (!CanContinue())
             {
                 return false;

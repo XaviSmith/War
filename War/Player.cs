@@ -79,6 +79,7 @@ namespace War
             }
         }
 
+        //We won a hand. Print a message and add the cards to our spoils of war
         public void WinHand(List<Card> winnings)
         {
             Console.WriteLine(name + " wins the hand!\n");
